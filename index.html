@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waleska Santos | Consultoria Imobiliária & Villas de Lisboa</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        salvia: '#E4E9DF',   // Fundo suave
+                        musgo: '#232B1F',    // Texto e painéis escuros
+                        marfim: '#FAF9F4',   // Cards e detalhes
+                        latao: '#A6835A',    // Detalhes metálicos/joias
+                        azulejo: '#3C5A56'   // Verde-azulado tipo azulejo de Lisboa
+                    },
+                    fontFamily: {
+                        serif: ['Playfair Display', 'Georgia', 'serif'],
+                        sans: ['Jost', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(35, 43, 31, 0.07)',
+                        'card': '0 10px 30px rgba(35, 43, 31, 0.05)',
+                        'gold': '0 10px 25px rgba(166, 131, 90, 0.25)'
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #E4E9DF;
+            color: #232B1F;
+            font-family: 'Jost', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-serif {
+            font-family: 'Playfair Display', Georgia, serif;
+        }
+
+        /* Circular Frame with Brass Accent Ring */
+        .circular-portrait {
+            position: relative;
+            border-radius: 50%;
+            padding: 8px;
+            background: linear-gradient(135deg, #A6835A 0%, #E4E9DF 50%, #3C5A56 100%);
+            box-shadow: 0 15px 35px rgba(35, 43, 31, 0.15);
+        }
+
+        .circular-portrait img, .circular-portrait .portrait-bg {
+            border-radius: 50%;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* Watermark Background Typography */
+        .watermark-lisboa {
+            position: absolute;
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-weight: 700;
+            color: rgba(35, 43, 31, 0.035);
+            line-height: 0.8;
+            pointer-events: none;
+            user-select: none;
+            z-index: 0;
+            letter-spacing: -0.03em;
+            white-space: nowrap;
+        }
+
+        /* Gold metallic line gradient */
+        .brass-gradient-text {
+            background: linear-gradient(135deg, #A6835A 0%, #836239 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .brass-border {
+            border-color: #A6835A;
+        }
+
+        .azulejo-pattern-bg {
+            background-image: radial-gradient(#3C5A56 0.75px, transparent 0.75px), radial-gradient(#3C5A56 0.75px, #FAF9F4 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            opacity: 0.05;
+        }
+
+        /* Range Slider Styling */
+        input[type=range] {
+            accent-color: #A6835A;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #E4E9DF;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3C5A56;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #A6835A;
+        }
+    </style>
+</head>
+<body class="antialiased text-musgo bg-salvia relative selection:bg-latao selection:text-marfim">
+
+    <!-- NAVBAR -->
+    <header class="sticky top-0 z-50 bg-salvia/90 backdrop-blur-md border-b border-musgo/10 transition-all duration-300" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-full border border-latao p-0.5 flex items-center justify-center transition-transform group-hover:scale-105">
+                    <div class="w-full h-full rounded-full bg-musgo text-marfim flex items-center justify-center font-serif text-sm font-semibold">
+                        WS
+                    </div>
+                </div>
+                <div>
+                    <span class="block font-serif text-lg tracking-widest text-musgo font-medium uppercase leading-tight">Waleska Santos</span>
+                    <span class="block text-[10px] tracking-widest uppercase text-latao font-semibold">Consultoria Imobiliária</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-musgo/80">
+                <a href="#simulacao" class="hover:text-latao transition-colors">Simulação</a>
+                <a href="#villas" class="hover:text-latao transition-colors">Villas de Lisboa</a>
+                <a href="#sobre" class="hover:text-latao transition-colors">Sobre</a>
+                <a href="#beneficios" class="hover:text-latao transition-colors">Diferenciais</a>
+                <a href="#faq" class="hover:text-latao transition-colors">FAQ</a>
+            </nav>
+
+            <!-- CTA Header Button -->
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/5500000000000?text=Ol%C3%A1%20Waleska,%20gostaria%20de%20fazer%20uma%20simula%C3%A7%C3%A3o%20imobili%C3%A1ria!" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider px-4 py-2.5 rounded-full border border-azulejo text-azulejo hover:bg-azulejo hover:text-marfim transition-all duration-300">
+                    <i class="fa-brands fa-whatsapp text-sm"></i> WhatsApp
+                </a>
+                <a href="#captacao" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider px-5 py-2.5 rounded-full bg-musgo text-marfim hover:bg-latao shadow-md hover:shadow-gold transition-all duration-300">
+                    Atendimento VIP
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative pt-12 pb-20 md:pt-20 md:pb-32 overflow-hidden">
+        
+        <!-- Signature Watermark Word 'LISBOA' -->
+        <div class="watermark-lisboa -top-10 left-1/2 -translate-x-1/2 text-[140px] sm:text-[220px] md:text-[320px] lg:text-[400px] select-none">
+            LISBOA
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Hero Left Column Content -->
+                <div class="lg:col-span-7 text-center lg:text-left">
+                    
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-marfim border border-latao/40 text-musgo text-xs font-semibold tracking-wider uppercase mb-6 shadow-sm">
+                        <span class="w-2 h-2 rounded-full bg-latao animate-pulse"></span>
+                        Villas de Lisboa & Oportunidades Exclusivas
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-musgo font-normal tracking-tight leading-[1.15] mb-6">
+                        Sua jornada imobiliária com a excelência que <span class="font-serif italic text-latao font-semibold">você merece.</span>
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-musgo/80 leading-relaxed max-w-2xl mx-auto lg:mx-0 mb-8 font-light">
+                        Ofereço consultoria imobiliária sob medida para quem busca investir ou morar com segurança em Lisboa e regiões nobres. Faça sua simulação financeira e encontre o imóvel ideal.
+                    </p>
+
+                    <!-- Quick Action Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
+                        <a href="#simulacao" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-musgo text-marfim hover:bg-latao font-medium text-sm tracking-wide shadow-lg hover:shadow-gold transition-all duration-300 group">
+                            <span>Faça Já a Sua Simulação</span>
+                            <i class="fa-solid fa-arrow-right text-xs transition-transform group-hover:translate-x-1"></i>
+                        </a>
+                        <a href="#villas" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-marfim border border-musgo/20 text-musgo hover:border-azulejo hover:text-azulejo font-medium text-sm tracking-wide shadow-sm transition-all">
+                            <span>Conhecer Empreendimentos</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats Bar -->
+                    <div class="pt-8 border-t border-musgo/10 grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 text-center lg:text-left">
+                        <div>
+                            <span class="block font-serif text-2xl sm:text-3xl font-semibold text-azulejo">100%</span>
+                            <span class="text-xs text-musgo/70 uppercase tracking-wider">Atendimento Personalizado</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-2xl sm:text-3xl font-semibold text-azulejo">12+</span>
+                            <span class="text-xs text-musgo/70 uppercase tracking-wider">Anos de Experiência</span>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-2xl sm:text-3xl font-semibold text-azulejo">R$ 50M+</span>
+                            <span class="text-xs text-musgo/70 uppercase tracking-wider">Em Negócios Geridos</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Hero Right Column (Circular Frame & Floating Cards) -->
+                <div class="lg:col-span-5 flex flex-col items-center justify-center relative">
+                    
+                    <!-- Decorative Lisboa Backdrop Circle -->
+                    <div class="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-azulejo/10 blur-2xl -z-10"></div>
+                    
+                    <!-- Main Circular Portrait Frame -->
+                    <div class="circular-portrait w-64 h-64 sm:w-80 sm:h-80 md:w-88 md:h-88 shadow-2xl relative group">
+                        
+                        <!-- Waleska Santos Portrait Image -->
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" 
+                             alt="Waleska Santos - Consultora Imobiliária" 
+                             class="w-full h-full object-cover rounded-full filter grayscale-[10%] contrast-[1.05] transition-transform duration-700 group-hover:scale-105"
+                             onerror="this.onerror=null; this.src='https://placehold.co/400x400/232B1F/FAF9F4?text=Waleska+Santos';">
+                        
+                        <!-- Overlay subtle ring glow -->
+                        <div class="absolute inset-0 rounded-full border-2 border-latao/40 pointer-events-none"></div>
+                    </div>
+
+                    <!-- Floating Card Badge 1: Simulação Direct Link -->
+                    <a href="#simulacao" class="absolute -bottom-4 -left-2 sm:left-4 bg-marfim/95 backdrop-blur-md p-3.5 sm:p-4 rounded-2xl shadow-card border border-latao/30 flex items-center gap-3.5 hover:scale-105 transition-transform">
+                        <div class="w-10 h-10 rounded-xl bg-azulejo text-marfim flex items-center justify-center shadow-md">
+                            <i class="fa-solid fa-calculator text-base"></i>
+                        </div>
+                        <div>
+                            <span class="block text-[10px] uppercase font-bold tracking-wider text-latao">Simulador Ativo</span>
+                            <span class="block font-serif text-sm font-semibold text-musgo">Faça a sua Simulação</span>
+                        </div>
+                    </a>
+
+                    <!-- Floating Card Badge 2: Villas de Lisboa -->
+                    <a href="#villas" class="absolute top-6 -right-2 sm:right-2 bg-musgo/95 text-marfim backdrop-blur-md p-3.5 sm:p-4 rounded-2xl shadow-card border border-latao/40 flex items-center gap-3.5 hover:scale-105 transition-transform">
+                        <div class="w-10 h-10 rounded-xl bg-latao text-marfim flex items-center justify-center shadow-md">
+                            <i class="fa-solid fa-building-columns text-base"></i>
+                        </div>
+                        <div>
+                            <span class="block text-[10px] uppercase font-bold tracking-wider text-latao">Destaque Exclusivo</span>
+                            <span class="block font-serif text-sm font-semibold text-marfim">Villas de Lisboa</span>
+                        </div>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: SIMULAÇÃO IMOBILIÁRIA INTERATIVA -->
+    <section id="simulacao" class="py-20 bg-marfim relative border-y border-musgo/10">
+        <div class="azulejo-pattern-bg absolute inset-0 pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-xs font-semibold uppercase tracking-widest text-latao mb-2 block">Planejamento Inteligente</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-musgo font-normal mb-4">
+                    Faça Já a Sua <span class="italic font-serif text-latao font-semibold">Simulação</span>
+                </h2>
+                <p class="text-musgo/70 text-base">
+                    Estime o valor aproximado da sua parcela e o potencial de investimento para adquirir seu imóvel em Lisboa ou regiões nobres.
+                </p>
+            </div>
+
+            <!-- Simulator Widget Container -->
+            <div class="max-w-4xl mx-auto bg-salvia rounded-3xl p-6 sm:p-10 shadow-soft border border-musgo/10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Left: Sliders Controls -->
+                    <div class="lg:col-span-7 space-y-6">
+                        
+                        <!-- Input 1: Property Value -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="propValue" class="text-sm font-medium text-musgo">Valor do Imóvel Estimado</label>
+                                <span class="font-serif font-semibold text-lg text-azulejo" id="propValueDisplay">€ 350.000</span>
+                            </div>
+                            <input type="range" id="propValue" min="150000" max="2500000" step="25000" value="350000" 
+                                   class="w-full h-2 bg-marfim rounded-lg appearance-none cursor-pointer border border-musgo/10">
+                            <div class="flex justify-between text-[11px] text-musgo/50 mt-1">
+                                <span>€ 150k</span>
+                                <span>€ 2.5M+</span>
+                            </div>
+                        </div>
+
+                        <!-- Input 2: Down Payment % -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="downPayment" class="text-sm font-medium text-musgo">Entrada / Capital Próprio (%)</label>
+                                <span class="font-serif font-semibold text-lg text-azulejo" id="downPaymentDisplay">20% (€ 70.000)</span>
+                            </div>
+                            <input type="range" id="downPayment" min="10" max="60" step="5" value="20" 
+                                   class="w-full h-2 bg-marfim rounded-lg appearance-none cursor-pointer border border-musgo/10">
+                            <div class="flex justify-between text-[11px] text-musgo/50 mt-1">
+                                <span>10% (Mínimo)</span>
+                                <span>60%</span>
+                            </div>
+                        </div>
+
+                        <!-- Input 3: Loan Term Years -->
+                        <div>
+                            <div class="flex justify-between items-center mb-2">
+                                <label for="loanTerm" class="text-sm font-medium text-musgo">Prazo do Financiamento</label>
+                                <span class="font-serif font-semibold text-lg text-azulejo" id="loanTermDisplay">30 Anos</span>
+                            </div>
+                            <input type="range" id="loanTerm" min="10" max="40" step="5" value="30" 
+                                   class="w-full h-2 bg-marfim rounded-lg appearance-none cursor-pointer border border-musgo/10">
+                            <div class="flex justify-between text-[11px] text-musgo/50 mt-1">
+                                <span>10 anos</span>
+                                <span>40 anos</span>
+                            </div>
+                        </div>
+
+                        <div class="p-3.5 bg-marfim/60 rounded-xl border border-latao/20 text-xs text-musgo/70 flex items-start gap-2.5">
+                            <i class="fa-solid fa-circle-info text-latao text-sm mt-0.5"></i>
+                            <p>Taxas de juro calculadas com base nas médias vigentes para residentes e investidores estrangeiros. Os valores finais dependem de análise de crédito personalizada.</p>
+                        </div>
+
+                    </div>
+
+                    <!-- Right: Results Panel -->
+                    <div class="lg:col-span-5 bg-musgo text-marfim p-6 sm:p-8 rounded-2xl flex flex-col justify-between h-full border border-latao/30 relative overflow-hidden">
+                        
+                        <div class="watermark-lisboa -right-10 -bottom-10 text-[100px] text-marfim/5 pointer-events-none">
+                            LISBOA
+                        </div>
+
+                        <div>
+                            <span class="text-[11px] uppercase tracking-widest text-latao font-semibold block mb-1">Estimativa de Parcela</span>
+                            <div class="font-serif text-3xl sm:text-4xl text-marfim font-medium mb-1" id="monthlyInstallmentDisplay">
+                                € 1.240 <span class="text-xs font-sans text-marfim/60">/ mês</span>
+                            </div>
+                            <span class="text-xs text-marfim/70 block mb-6">Financiamento estimado: <strong class="text-marfim font-normal" id="financedAmountDisplay">€ 280.000</strong></span>
+
+                            <div class="space-y-2 border-t border-marfim/10 pt-4 text-xs">
+                                <div class="flex justify-between">
+                                    <span class="text-marfim/60">Renda mínima recomendada:</span>
+                                    <span class="font-medium text-latao" id="minIncomeDisplay">€ 3.540 /mês</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-marfim/60">Impostos & Registo (aprox.):</span>
+                                    <span class="font-medium text-marfim" id="taxesDisplay">€ 14.200</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-6 border-t border-marfim/10">
+                            <button onclick="enviarSimulacaoWhatsApp()" class="w-full py-3.5 px-4 rounded-xl bg-latao text-marfim font-medium text-xs uppercase tracking-wider hover:bg-opacity-90 transition-all flex items-center justify-center gap-2 shadow-gold">
+                                <i class="fa-brands fa-whatsapp text-base"></i>
+                                <span>Enviar Resultado por WhatsApp</span>
+                            </button>
+                            <a href="#captacao" class="block text-center text-[11px] text-marfim/70 hover:text-latao underline mt-3 transition-colors">
+                                Desejo receber estudo completo por e-mail
+                            </a>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 2: EMPREENDIMENTO EM DESTAQUE - VILLAS DE LISBOA -->
+    <section id="villas" class="py-20 relative overflow-hidden">
+        
+        <!-- Watermark -->
+        <div class="watermark-lisboa top-1/2 -translate-y-1/2 left-0 text-[200px] md:text-[350px]">
+            VILLAS
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-azulejo/10 text-azulejo text-xs font-semibold tracking-wider uppercase mb-3">
+                        <i class="fa-solid fa-gem text-latao"></i> Empreendimento Exclusivo
+                    </div>
+                    <h2 class="font-serif text-3xl sm:text-5xl text-musgo font-normal">
+                        Villas de <span class="italic font-serif text-latao font-semibold">Lisboa</span>
+                    </h2>
+                </div>
+                <p class="text-musgo/70 text-sm sm:text-base max-w-md">
+                    Arquitetura moderna fundida com a tradição secular de Lisboa. Apartamentos de luxo com vista rio, acabamentos nobres e localização privilegiada.
+                </p>
+            </div>
+
+            <!-- Property Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1: Villa Tejo T2 -->
+                <div class="bg-marfim rounded-3xl overflow-hidden border border-musgo/10 shadow-card group hover:shadow-soft transition-all duration-500 flex flex-col justify-between">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" 
+                             alt="Villas de Lisboa - T2 Vista Rio" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/3C5A56/FAF9F4?text=Villas+de+Lisboa+T2';">
+                        <div class="absolute top-4 left-4 bg-musgo/80 backdrop-blur-md text-marfim text-[11px] uppercase font-semibold tracking-wider px-3 py-1 rounded-full border border-latao/40">
+                            T2 • Vista Rio
+                        </div>
+                        <div class="absolute top-4 right-4 w-9 h-9 rounded-full bg-marfim/90 flex items-center justify-center text-musgo hover:text-latao transition-colors cursor-pointer">
+                            <i class="fa-regular fa-heart"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h3 class="font-serif text-xl font-medium text-musgo">Residência Tejo Premium</h3>
+                                <span class="font-serif font-semibold text-lg text-azulejo">€ 420.000</span>
+                            </div>
+                            <p class="text-xs text-musgo/70 mb-4 line-clamp-2">Variante nobre com varanda panorâmica, acabamentos em pedra natural e domótica integrada.</p>
+                            
+                            <div class="grid grid-cols-3 gap-2 py-3 border-y border-musgo/10 text-xs text-musgo/80 mb-6">
+                                <div class="flex items-center gap-1.5"><i class="fa-solid fa-bed text-latao"></i> 2 Suítes</div>
+                                <div class="flex items-center gap-1.5"><i class="fa-solid fa-bath text-latao"></i> 2 WCs</div>
+                                <div class="flex items-center gap-1.5"><i class="fa-solid fa-ruler-combined text-latao"></i> 110 m²</div>
+                            </div>
+                        </div>
+
+                        <button onclick="abrirModalInteresse('Residência Tejo Premium T2')" class="w-full py-3 rounded-xl border border-musgo text-musgo hover:bg-musgo hover:text-marfim text-xs font-semibold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2">
+                            <span>Solicitar Dossier</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2: Villa Chiado T3 Penthouse -->
+                <div class="bg-marfim rounded-3xl overflow-hidden border border-latao/40 shadow-card group hover:shadow-soft transition-all duration-500 flex flex-col justify-between relative">
+                    <div class="absolute top-0 right-0 bg-latao text-marfim text-[10px] uppercase font-bold tracking-widest px-4 py-1 rounded-bl-xl z-10 shadow-sm">
+                        Lançamento
+                    </div>
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=800&auto=format&fit=crop" 
+                             alt="Villas de Lisboa - T3 Penthouse" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/232B1F/FAF9F4?text=Villas+de+Lisboa+T3';">
+                        <div class="absolute top-4 left-4 bg-musgo/80 backdrop-blur-md text-marfim text-[11px] uppercase font-semibold tracking-wider px-3 py-1 rounded-full border border-latao/40">
+                            T3 • Penthouse
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h3 class="font-serif text-xl font-medium text-musgo">Penthouse Chiado Royal</h3>
+                                <span class="font-serif font-semibold text-lg text-azulejo">€ 890.000</span>
+                            </div>
+                            <p class="text-xs text-musgo/70 mb-4 line-clamp-2">Terraço privativo de 60m² com piscina aquecida e vista desimpedida para o Rio Tejo.</p>
+                            
+                            <div class="grid grid-cols-3 gap-2 py-3 border-y border-musgo/10 text-xs text-musgo/80 mb-6">
+                                <div class="flex items-center gap-1.5"><i class="fa-solid fa-bed text-latao"></i> 3 Suítes</div>
+                                <div class="flex items-center gap-1.5"><i class="fa-solid fa-square-parking text-latao"></i> 2 Vagas</div>
+                                <div class="flex items-center gap-1.5"><i class="fa-solid fa-ruler-combined text-latao"></i> 195 m²</div>
+                            </div>
+                        </div>
+
+                        <button onclick="abrirModalInteresse('Penthouse Chiado Royal T3')" class="w-full py-3 rounded-xl bg-musgo text-marfim hover:bg-latao text-xs font-semibold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2 shadow-md">
+                            <span>Solicitar Dossier</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 3: Villa Alfama T1 Executive -->
+                <div class="bg-marfim rounded-3xl overflow-hidden border border-musgo/10 shadow-card group hover:shadow-soft transition-all duration-500 flex flex-col justify-between">
+                    <div class="relative h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?q=80&w=800&auto=format&fit=crop" 
+                             alt="Villas de Lisboa - T1 Executive" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                             onerror="this.onerror=null; this.src='https://placehold.co/600x400/A6835A/FAF9F4?text=Villas+de+Lisboa+T1';">
+                        <div class="absolute top-4 left-4 bg-musgo/80 backdrop-blur-md text-marfim text-[11px] uppercase font-semibold tracking-wider px-3 py-1 rounded-full border border-latao/40">
+                            T1 • Investimento
+                        </div>
+                    </div>
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h3 class="font-serif text-xl font-medium text-musgo">Studio Alfama Elegance</h3>
+                                <span class="font-serif font-semibold text-lg text-azulejo">€ 295.000</span>
+                            </div>
+                            <p class="text-xs text-musgo/70 mb-4 line-clamp-2">Ideal para rentabilidade turística ou Golden Visa / Residência. Altíssima procura de arrendamento.</p>
+                            
+                            <div class="grid grid-cols-3 gap-2 py-3 border-y border-musgo/10 text-xs text-musgo/80 mb-6">
+                                <div class="flex items-center gap-1.5"><i class="fa-solid fa-bed text-latao"></i> 1 Quarto</div>
+                                <div class="flex items-center gap-1.5"><i class="fa-solid fa-chart-line text-latao"></i> High Yield</div>
+                                <div class="flex items-center gap-1.5"><i class="fa-solid fa-ruler-combined text-latao"></i> 68 m²</div>
+                            </div>
+                        </div>
+
+                        <button onclick="abrirModalInteresse('Studio Alfama Elegance T1')" class="w-full py-3 rounded-xl border border-musgo text-musgo hover:bg-musgo hover:text-marfim text-xs font-semibold uppercase tracking-wider transition-all duration-300 flex items-center justify-center gap-2">
+                            <span>Solicitar Dossier</span>
+                            <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom CTA banner -->
+            <div class="mt-12 text-center">
+                <a href="#captacao" class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-azulejo text-marfim hover:bg-musgo font-medium text-sm tracking-wide shadow-md transition-all">
+                    <i class="fa-solid fa-building-circle-check text-latao"></i>
+                    <span>Ver Catálogo Completo de Imóveis Disponíveis em Lisboa</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 3: SOBRE WALESKA SANTOS -->
+    <section id="sobre" class="py-20 bg-musgo text-marfim relative overflow-hidden">
+        
+        <!-- Background Lisboa watermark -->
+        <div class="watermark-lisboa bottom-0 right-0 text-[250px] md:text-[400px] text-marfim/5">
+            SANTOS
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Circular Frame Photo Column -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative">
+                        <!-- Outer Decorative Ring -->
+                        <div class="absolute -inset-4 rounded-full border border-latao/30 animate-spin-slow pointer-events-none"></div>
+                        
+                        <!-- Main Circular Frame -->
+                        <div class="circular-portrait w-72 h-72 sm:w-96 sm:h-96 shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=800&auto=format&fit=crop" 
+                                 alt="Waleska Santos Profile" 
+                                 class="w-full h-full object-cover rounded-full filter contrast-[1.05]"
+                                 onerror="this.onerror=null; this.src='https://placehold.co/400x400/FAF9F4/232B1F?text=Waleska+Santos';">
+                        </div>
+
+                        <!-- Signature Seal Badge -->
+                        <div class="absolute -bottom-4 right-2 sm:right-6 bg-latao text-marfim p-4 rounded-2xl shadow-lg border border-marfim/20 flex items-center gap-3">
+                            <i class="fa-solid fa-award text-2xl"></i>
+                            <div>
+                                <span class="block text-[10px] uppercase font-semibold tracking-wider text-marfim/80">Selo de Qualidade</span>
+                                <span class="block font-serif text-xs font-bold">Atendimento VIP Exclusivo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Text Bio Column -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-latao block">Sua Consultora Imobiliária</span>
+                    
+                    <h2 class="font-serif text-3xl sm:text-5xl font-normal leading-tight">
+                        Waleska Santos
+                    </h2>
+
+                    <p class="text-marfim/80 text-base leading-relaxed font-light">
+                        Especialista no mercado imobiliário de alto padrão e investimentos imobiliários entre o Brasil e Portugal. Com uma metodologia pautada na transparência, discrição e rigor técnico, conduzo meus clientes em todas as fases da aquisição: desde a simulação de crédito até a entrega das chaves.
+                    </p>
+
+                    <p class="text-marfim/70 text-sm leading-relaxed font-light">
+                        Seja para moradia da família ou diversificação de patrimônio em moeda forte, garanto acesso prévio a lançamentos emblemáticos como o <strong>Villas de Lisboa</strong> e negociações diretas com os melhores promotores do setor.
+                    </p>
+
+                    <!-- Credentials Badges -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-4 text-left">
+                        <div class="p-4 rounded-2xl bg-salvia/10 border border-marfim/10">
+                            <i class="fa-solid fa-shield-halved text-latao text-lg mb-2"></i>
+                            <h4 class="font-serif text-sm font-semibold mb-0.5">Segurança Jurídica</h4>
+                            <p class="text-[11px] text-marfim/60">Acompanhamento completo de contratos.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-salvia/10 border border-marfim/10">
+                            <i class="fa-solid fa-handshake text-latao text-lg mb-2"></i>
+                            <h4 class="font-serif text-sm font-semibold mb-0.5">Rede de Parcerias</h4>
+                            <p class="text-[11px] text-marfim/60">Bancos, advogados e cartórios integrados.</p>
+                        </div>
+
+                        <div class="p-4 rounded-2xl bg-salvia/10 border border-marfim/10 col-span-2 sm:col-span-1">
+                            <i class="fa-solid fa-chart-line text-latao text-lg mb-2"></i>
+                            <h4 class="font-serif text-sm font-semibold mb-0.5">Análise Financeira</h4>
+                            <p class="text-[11px] text-marfim/60">Estudos de ROI e valorização.</p>
+                        </div>
+                    </div>
+
+                    <!-- Direct Social Contacts -->
+                    <div class="pt-6 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                        <a href="https://wa.me/5500000000000" target="_blank" class="px-6 py-3 rounded-full bg-latao hover:bg-marfim hover:text-musgo text-marfim font-medium text-xs uppercase tracking-wider transition-all duration-300 flex items-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Falar Direto no WhatsApp
+                        </a>
+                        <a href="https://instagram.com" target="_blank" class="p-3 rounded-full border border-marfim/20 hover:border-latao hover:text-latao text-marfim transition-colors">
+                            <i class="fa-brands fa-instagram text-base"></i>
+                        </a>
+                        <a href="mailto:contato@waleskasantos.com" class="p-3 rounded-full border border-marfim/20 hover:border-latao hover:text-latao text-marfim transition-colors">
+                            <i class="fa-regular fa-envelope text-base"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: DIFERENCIAIS DA CONSULTORIA -->
+    <section id="beneficios" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-semibold uppercase tracking-widest text-latao mb-2 block">Atendimento de Excelência</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-musgo font-normal">
+                    Por que escolher a nossa <span class="italic font-serif text-latao font-semibold">consultoria?</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Pillar 1 -->
+                <div class="bg-marfim p-8 rounded-3xl border border-musgo/10 shadow-card hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-salvia text-azulejo flex items-center justify-center text-xl mb-6 border border-musgo/10">
+                            <i class="fa-solid fa-magnifying-glass-dollar"></i>
+                        </div>
+                        <h3 class="font-serif text-lg font-medium text-musgo mb-3">Simulação Personalizada</h3>
+                        <p class="text-xs text-musgo/70 leading-relaxed">
+                            Avaliamos sua capacidade financeira em tempo real para apresentar apenas opções reais e vantajosas.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-musgo/10 text-[11px] text-latao font-semibold uppercase tracking-wider">
+                        Sem custos prévios
+                    </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="bg-marfim p-8 rounded-3xl border border-musgo/10 shadow-card hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-salvia text-azulejo flex items-center justify-center text-xl mb-6 border border-musgo/10">
+                            <i class="fa-solid fa-key"></i>
+                        </div>
+                        <h3 class="font-serif text-lg font-medium text-musgo mb-3">Acesso Off-Market</h3>
+                        <p class="text-xs text-musgo/70 leading-relaxed">
+                            Oportunidades exclusivas no Villas de Lisboa e outros empreendimentos antes do lançamento ao mercado geral.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-musgo/10 text-[11px] text-latao font-semibold uppercase tracking-wider">
+                        Unidades reservadas
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="bg-marfim p-8 rounded-3xl border border-musgo/10 shadow-card hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-salvia text-azulejo flex items-center justify-center text-xl mb-6 border border-musgo/10">
+                            <i class="fa-solid fa-passport"></i>
+                        </div>
+                        <h3 class="font-serif text-lg font-medium text-musgo mb-3">Suporte a Não-Residentes</h3>
+                        <p class="text-xs text-musgo/70 leading-relaxed">
+                            Auxílio com NIF, abertura de conta bancária em Portugal, procurações e vistos de residência/investimento.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-musgo/10 text-[11px] text-latao font-semibold uppercase tracking-wider">
+                        Assessoria 360°
+                    </div>
+                </div>
+
+                <!-- Pillar 4 -->
+                <div class="bg-marfim p-8 rounded-3xl border border-musgo/10 shadow-card hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+                    <div>
+                        <div class="w-12 h-12 rounded-2xl bg-salvia text-azulejo flex items-center justify-center text-xl mb-6 border border-musgo/10">
+                            <i class="fa-solid fa-chart-pie"></i>
+                        </div>
+                        <h3 class="font-serif text-lg font-medium text-musgo mb-3">Gestão de Arrendamento</h3>
+                        <p class="text-xs text-musgo/70 leading-relaxed">
+                            Para investidores, estruturamos a gestão de locação para rentabilidade mensal imediata e valorização.
+                        </p>
+                    </div>
+                    <div class="mt-6 pt-4 border-t border-musgo/10 text-[11px] text-latao font-semibold uppercase tracking-wider">
+                        Rendimento em Euro
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 5: FORMULÁRIO PRINCIPAL DE CAPTAÇÃO DE CLIENTES -->
+    <section id="captacao" class="py-20 bg-salvia relative border-t border-musgo/10">
+        
+        <!-- Watermark -->
+        <div class="watermark-lisboa top-10 right-0 text-[300px]">
+            LISBOA
+        </div>
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="bg-marfim rounded-3xl shadow-soft border border-latao/30 p-8 sm:p-12 relative overflow-hidden">
+                
+                <div class="text-center max-w-2xl mx-auto mb-10">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-latao block mb-2">Atendimento Prioritário</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl text-musgo font-normal mb-3">
+                        Solicite sua Consultoria & <span class="italic font-serif text-latao font-semibold">Simulação Imobiliária</span>
+                    </h2>
+                    <p class="text-xs sm:text-sm text-musgo/70">
+                        Preencha os seus dados abaixo para receber uma seleção personalizada de imóveis e análise de viabilidade financeira sem compromisso.
+                    </p>
+                </div>
+
+                <!-- Lead Form -->
+                <form id="leadForm" onsubmit="processarCaptacao(event)" class="space-y-6">
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+                        <!-- Field 1: Full Name -->
+                        <div>
+                            <label for="fullName" class="block text-xs font-semibold uppercase tracking-wider text-musgo mb-2">
+                                Nome Completo *
+                            </label>
+                            <input type="text" id="fullName" required placeholder="Ex: Maria Silva"
+                                   class="w-full px-4 py-3.5 rounded-xl bg-salvia/50 border border-musgo/20 text-musgo text-sm focus:outline-none focus:border-latao focus:bg-marfim transition-all">
+                        </div>
+
+                        <!-- Field 2: WhatsApp -->
+                        <div>
+                            <label for="phone" class="block text-xs font-semibold uppercase tracking-wider text-musgo mb-2">
+                                WhatsApp / Telefone *
+                            </label>
+                            <input type="tel" id="phone" required placeholder="Ex: +55 (11) 99999-9999"
+                                   class="w-full px-4 py-3.5 rounded-xl bg-salvia/50 border border-musgo/20 text-musgo text-sm focus:outline-none focus:border-latao focus:bg-marfim transition-all">
+                        </div>
+
+                        <!-- Field 3: Email -->
+                        <div>
+                            <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-musgo mb-2">
+                                E-mail Principal *
+                            </label>
+                            <input type="email" id="email" required placeholder="Ex: maria@email.com"
+                                   class="w-full px-4 py-3.5 rounded-xl bg-salvia/50 border border-musgo/20 text-musgo text-sm focus:outline-none focus:border-latao focus:bg-marfim transition-all">
+                        </div>
+
+                        <!-- Field 4: Objective -->
+                        <div>
+                            <label for="objective" class="block text-xs font-semibold uppercase tracking-wider text-musgo mb-2">
+                                Objetivo Principal
+                            </label>
+                            <select id="objective" 
+                                    class="w-full px-4 py-3.5 rounded-xl bg-salvia/50 border border-musgo/20 text-musgo text-sm focus:outline-none focus:border-latao focus:bg-marfim transition-all">
+                                <option value="Comprar para Morar em Lisboa">Comprar para Morar em Lisboa</option>
+                                <option value="Investimento / Arrendamento em Euro">Investimento / Arrendamento em Euro</option>
+                                <option value="Interesse Específico no Villas de Lisboa">Interesse Específico no Villas de Lisboa</option>
+                                <option value="Simulação de Financiamento BAncário">Simulação de Financiamento Bancário</option>
+                                <option value="Golden Visa / Residência">Visto de Residência / Investimento</option>
+                            </select>
+                        </div>
+
+                        <!-- Field 5: Budget Range -->
+                        <div>
+                            <label for="budget" class="block text-xs font-semibold uppercase tracking-wider text-musgo mb-2">
+                                Faixa de Investimento Prevista
+                            </label>
+                            <select id="budget" 
+                                    class="w-full px-4 py-3.5 rounded-xl bg-salvia/50 border border-musgo/20 text-musgo text-sm focus:outline-none focus:border-latao focus:bg-marfim transition-all">
+                                <option value="Até € 250.000">Até € 250.000</option>
+                                <option value="€ 250.000 a € 500.000" selected>€ 250.000 a € 500.000</option>
+                                <option value="€ 500.000 a € 1.000.000">€ 500.000 a € 1.000.000</option>
+                                <option value="Acima de € 1.000.000 (Alto Padrão)">Acima de € 1.000.000 (Alto Padrão)</option>
+                            </select>
+                        </div>
+
+                        <!-- Field 6: Timeline -->
+                        <div>
+                            <label for="timeline" class="block text-xs font-semibold uppercase tracking-wider text-musgo mb-2">
+                                Pretensão de Compra
+                            </label>
+                            <select id="timeline" 
+                                    class="w-full px-4 py-3.5 rounded-xl bg-salvia/50 border border-musgo/20 text-musgo text-sm focus:outline-none focus:border-latao focus:bg-marfim transition-all">
+                                <option value="Imediata (Próximos 30 dias)">Imediata (Próximos 30 dias)</option>
+                                <option value="Curto Prazo (3 a 6 meses)">Curto Prazo (3 a 6 meses)</option>
+                                <option value="Planejamento para o próximo ano">Planejamento para o próximo ano</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <!-- Additional Message -->
+                    <div>
+                        <label for="notes" class="block text-xs font-semibold uppercase tracking-wider text-musgo mb-2">
+                            Mensagem ou Dúvidas Adicionais (Opcional)
+                        </label>
+                        <textarea id="notes" rows="3" placeholder="Conte-nos brevemente o que procura (tipo de imóvel, bairro em Lisboa, se necessita de financiamento)..."
+                                  class="w-full px-4 py-3.5 rounded-xl bg-salvia/50 border border-musgo/20 text-musgo text-sm focus:outline-none focus:border-latao focus:bg-marfim transition-all"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="pt-2 text-center">
+                        <button type="submit" id="btnSubmitForm" class="w-full sm:w-auto px-10 py-4 rounded-full bg-musgo text-marfim font-medium text-sm uppercase tracking-wider hover:bg-latao shadow-lg hover:shadow-gold transition-all duration-300 inline-flex items-center justify-center gap-3">
+                            <i class="fa-regular fa-paper-plane"></i>
+                            <span>Enviar Solicitação de Atendimento VIP</span>
+                        </button>
+                        <p class="text-[11px] text-musgo/50 mt-3">
+                            <i class="fa-solid fa-lock text-latao"></i> Garantia de sigilo absoluto. Seus dados não serão compartilhados com terceiros.
+                        </p>
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 6: DEPOIMENTOS DE CLIENTES -->
+    <section class="py-20 bg-marfim border-t border-musgo/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-xs font-semibold uppercase tracking-widest text-latao mb-2 block">Histórias de Sucesso</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-musgo font-normal">
+                    O que dizem nossos <span class="italic font-serif text-latao font-semibold">clientes</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Testimonial 1 -->
+                <div class="bg-salvia/40 p-8 rounded-3xl border border-musgo/10 relative flex flex-col justify-between">
+                    <div class="text-latao mb-4">
+                        <i class="fa-solid fa-quote-left text-2xl"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-musgo/80 leading-relaxed mb-6 font-light">
+                        "A Waleska conduziu toda a simulação e o processo de aquisição do nosso apartamento no Villas de Lisboa com maestria incomparável. Nós estando no Brasil, não tivemos nenhuma preocupação!"
+                    </p>
+                    <div class="flex items-center gap-3 border-t border-musgo/10 pt-4">
+                        <div class="w-10 h-10 rounded-full border border-latao overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" 
+                                 alt="Cliente Camila R." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-sm font-semibold text-musgo">Camila & Rodrigo M.</h4>
+                            <span class="text-[10px] text-musgo/60 uppercase">Compradores em Lisboa</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-salvia/40 p-8 rounded-3xl border border-musgo/10 relative flex flex-col justify-between">
+                    <div class="text-latao mb-4">
+                        <i class="fa-solid fa-quote-left text-2xl"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-musgo/80 leading-relaxed mb-6 font-light">
+                        "Excelente consultoria financeira. A simulação inicial bateu exatamente com o crédito aprovado no banco português. Transparência do início ao fim."
+                    </p>
+                    <div class="flex items-center gap-3 border-t border-musgo/10 pt-4">
+                        <div class="w-10 h-10 rounded-full border border-latao overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" 
+                                 alt="Cliente Eduardo P." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-sm font-semibold text-musgo">Eduardo Paiva</h4>
+                            <span class="text-[10px] text-musgo/60 uppercase">Investidor Imobiliário</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-salvia/40 p-8 rounded-3xl border border-musgo/10 relative flex flex-col justify-between">
+                    <div class="text-latao mb-4">
+                        <i class="fa-solid fa-quote-left text-2xl"></i>
+                    </div>
+                    <p class="text-xs sm:text-sm text-musgo/80 leading-relaxed mb-6 font-light">
+                        "Procurávamos um refúgio de luxo perto do Tejo. A Waleska nos apresentou opções incríveis off-market e cuidou de toda a burocracia jurídica."
+                    </p>
+                    <div class="flex items-center gap-3 border-t border-musgo/10 pt-4">
+                        <div class="w-10 h-10 rounded-full border border-latao overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&auto=format&fit=crop" 
+                                 alt="Cliente Beatriz L." class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-serif text-sm font-semibold text-musgo">Beatriz Lacerda</h4>
+                            <span class="text-[10px] text-musgo/60 uppercase">Proprietária em Lisboa</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECTION 7: FAQ (PERGUNTAS FREQUENTES) -->
+    <section id="faq" class="py-20 bg-salvia relative border-t border-musgo/10">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-12">
+                <span class="text-xs font-semibold uppercase tracking-widest text-latao mb-2 block">Esclarecimentos</span>
+                <h2 class="font-serif text-3xl sm:text-4xl text-musgo font-normal">
+                    Perguntas <span class="italic font-serif text-latao font-semibold">Frequentes</span>
+                </h2>
+            </div>
+
+            <div class="space-y-4">
+                
+                <!-- FAQ Item 1 -->
+                <div class="bg-marfim rounded-2xl border border-musgo/10 overflow-hidden transition-all">
+                    <button onclick="toggleFaq(this)" class="w-full p-5 text-left flex justify-between items-center font-serif text-base text-musgo font-medium focus:outline-none">
+                        <span>Como funciona o financiamento imobiliário em Portugal para brasileiros?</span>
+                        <i class="fa-solid fa-plus text-latao text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden p-5 pt-0 text-xs sm:text-sm text-musgo/80 leading-relaxed border-t border-musgo/5">
+                        Cidadãos estrangeiros ou não-residentes podem financiar até 70% ou 75% do valor de avaliação do imóvel em bancos portugueses, com prazos de até 30 ou 40 anos (a depender da idade). Realizamos toda a simulação e intermediação bancária.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="bg-marfim rounded-2xl border border-musgo/10 overflow-hidden transition-all">
+                    <button onclick="toggleFaq(this)" class="w-full p-5 text-left flex justify-between items-center font-serif text-base text-musgo font-medium focus:outline-none">
+                        <span>Quais são os custos adicionais além do valor do imóvel?</span>
+                        <i class="fa-solid fa-plus text-latao text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden p-5 pt-0 text-xs sm:text-sm text-musgo/80 leading-relaxed border-t border-musgo/5">
+                        Em Portugal, deve-se considerar o IMT (Imposto Municipal sobre Transmissões Onerosas), o Imposto de Selo (0,8%), honorários notariais e registros. Em média, esses custos somam entre 6% a 8% do valor de compra.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="bg-marfim rounded-2xl border border-musgo/10 overflow-hidden transition-all">
+                    <button onclick="toggleFaq(this)" class="w-full p-5 text-left flex justify-between items-center font-serif text-base text-musgo font-medium focus:outline-none">
+                        <span>O que torna o empreendimento Villas de Lisboa tão diferenciado?</span>
+                        <i class="fa-solid fa-plus text-latao text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden p-5 pt-0 text-xs sm:text-sm text-musgo/80 leading-relaxed border-t border-musgo/5">
+                        O Villas de Lisboa combina localização privilegiada, arquitetura contemporânea com preservação de elementos históricos, alta eficiência energética (Classe A+), áreas de lazer completas e grande potencial de valorização imobiliária.
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="bg-marfim rounded-2xl border border-musgo/10 overflow-hidden transition-all">
+                    <button onclick="toggleFaq(this)" class="w-full p-5 text-left flex justify-between items-center font-serif text-base text-musgo font-medium focus:outline-none">
+                        <span>Preciso ir pessoalmente a Portugal para realizar a compra?</span>
+                        <i class="fa-solid fa-plus text-latao text-sm transition-transform duration-300"></i>
+                    </button>
+                    <div class="hidden p-5 pt-0 text-xs sm:text-sm text-musgo/80 leading-relaxed border-t border-musgo/5">
+                        Não necessariamente. É possível outorgar uma procuração específica a advogados parceiros em Portugal para emissão de NIF, abertura de conta bancária e assinatura de promessa de compra e venda à distância.
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-musgo text-marfim border-t border-latao/20 pt-16 pb-12 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-marfim/10">
+                
+                <!-- Brand Info Column -->
+                <div class="md:col-span-5 space-y-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full border border-latao p-0.5 flex items-center justify-center">
+                            <div class="w-full h-full rounded-full bg-marfim text-musgo flex items-center justify-center font-serif text-sm font-semibold">
+                                WS
+                            </div>
+                        </div>
+                        <div>
+                            <span class="block font-serif text-lg tracking-widest text-marfim font-medium uppercase leading-tight">Waleska Santos</span>
+                            <span class="block text-[10px] tracking-widest uppercase text-latao font-semibold">Consultoria Imobiliária</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-marfim/70 leading-relaxed max-w-sm font-light">
+                        Especialista em propriedades de alto padrão e oportunidades de investimento imobiliário em Lisboa e arredores. Atendimento personalizado e simulação sob medida.
+                    </p>
+                </div>
+
+                <!-- Navigation links -->
+                <div class="md:col-span-3 space-y-3 text-xs">
+                    <h4 class="font-serif text-sm font-semibold text-latao uppercase tracking-wider mb-2">Navegação</h4>
+                    <ul class="space-y-2 text-marfim/80">
+                        <li><a href="#simulacao" class="hover:text-latao transition-colors">Simulador de Crédito</a></li>
+                        <li><a href="#villas" class="hover:text-latao transition-colors">Villas de Lisboa</a></li>
+                        <li><a href="#sobre" class="hover:text-latao transition-colors">Sobre Waleska Santos</a></li>
+                        <li><a href="#captacao" class="hover:text-latao transition-colors">Solicitar Atendimento</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social & Contacts -->
+                <div class="md:col-span-4 space-y-3 text-xs">
+                    <h4 class="font-serif text-sm font-semibold text-latao uppercase tracking-wider mb-2">Contatos Diretos</h4>
+                    <p class="text-marfim/80 flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-latao text-sm"></i> +55 (00) 00000-0000 / +351 900 000 000
+                    </p>
+                    <p class="text-marfim/80 flex items-center gap-2">
+                        <i class="fa-regular fa-envelope text-latao text-sm"></i> contato@waleskasantos.com
+                    </p>
+                    <p class="text-marfim/80 flex items-center gap-2">
+                        <i class="fa-solid fa-location-dot text-latao text-sm"></i> Avenida da Liberdade, Lisboa • Portugal
+                    </p>
+                </div>
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] text-marfim/50 gap-4">
+                <p>© 2026 Waleska Santos Consultoria Imobiliária. Todos os direitos reservados.</p>
+                <div class="flex items-center gap-4">
+                    <span>Villas de Lisboa Exclusivity</span>
+                    <span>•</span>
+                    <a href="#mainHeader" class="hover:text-latao">Voltar ao topo <i class="fa-solid fa-arrow-up text-[9px]"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- CUSTOM SUCCESS MODAL (NO ALERT/CONFIRM) -->
+    <div id="modalSucesso" class="fixed inset-0 z-50 bg-musgo/80 backdrop-blur-sm flex items-center justify-center p-4 hidden transition-opacity duration-300">
+        <div class="bg-marfim rounded-3xl p-8 max-w-md w-full shadow-2xl border border-latao/40 text-center relative animate-fade-in">
+            <button onclick="fecharModalSucesso()" class="absolute top-4 right-4 text-musgo/50 hover:text-musgo">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="w-16 h-16 rounded-full bg-azulejo/10 text-azulejo border border-azulejo/30 flex items-center justify-center mx-auto mb-4 text-2xl">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="font-serif text-2xl text-musgo font-normal mb-2" id="modalTitulo">Solicitação Enviada!</h3>
+            <p class="text-xs sm:text-sm text-musgo/80 mb-6" id="modalTexto">
+                Obrigado pelo interesse! Waleska Santos entrará em contato em breve para apresentar seu estudo personalizado e o dossier do Villas de Lisboa.
+            </p>
+            <div class="space-y-3">
+                <a id="modalWhatsappBtn" href="https://wa.me/5500000000000" target="_blank" class="w-full py-3 px-4 rounded-full bg-musgo text-marfim text-xs font-semibold uppercase tracking-wider hover:bg-latao transition-all flex items-center justify-center gap-2 shadow-md">
+                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                    <span>Conversar Agora no WhatsApp</span>
+                </a>
+                <button onclick="fecharModalSucesso()" class="w-full py-2.5 px-4 text-xs text-musgo/60 hover:text-musgo transition-colors">
+                    Fechar Janela
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT CORE LOGIC -->
+    <script>
+        // Real-time Credit Simulator Calculation
+        const propValueInput = document.getElementById('propValue');
+        const downPaymentInput = document.getElementById('downPayment');
+        const loanTermInput = document.getElementById('loanTerm');
+
+        const propValueDisplay = document.getElementById('propValueDisplay');
+        const downPaymentDisplay = document.getElementById('downPaymentDisplay');
+        const loanTermDisplay = document.getElementById('loanTermDisplay');
+        
+        const monthlyInstallmentDisplay = document.getElementById('monthlyInstallmentDisplay');
+        const financedAmountDisplay = document.getElementById('financedAmountDisplay');
+        const minIncomeDisplay = document.getElementById('minIncomeDisplay');
+        const taxesDisplay = document.getElementById('taxesDisplay');
+
+        function formatCurrencyEUR(value) {
+            return new Intl.NumberFormat('pt-PT', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(value);
+        }
+
+        function calculateMortgage() {
+            const propValue = parseFloat(propValueInput.value);
+            const downPercent = parseFloat(downPaymentInput.value);
+            const termYears = parseInt(loanTermInput.value);
+
+            const downValue = propValue * (downPercent / 100);
+            const loanValue = propValue - downValue;
+
+            // Estimated annual interest rate (e.g. 3.8% Euribor + Spread average)
+            const annualInterestRate = 0.038;
+            const monthlyRate = annualInterestRate / 12;
+            const numberOfPayments = termYears * 12;
+
+            // PMT formula
+            let monthlyPayment = 0;
+            if (monthlyRate > 0) {
+                monthlyPayment = loanValue * (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) / (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
+            } else {
+                monthlyPayment = loanValue / numberOfPayments;
+            }
+
+            // Required Income (Monthly payment shouldn't exceed 35% of household income)
+            const minIncome = monthlyPayment / 0.35;
+
+            // Estimated IMT + Stamp Tax (~ 4% to 6%)
+            const estimatedTaxes = propValue * 0.048;
+
+            // Update DOM
+            propValueDisplay.textContent = formatCurrencyEUR(propValue);
+            downPaymentDisplay.textContent = `${downPercent}% (${formatCurrencyEUR(downValue)})`;
+            loanTermDisplay.textContent = `${termYears} Anos`;
+
+            monthlyInstallmentDisplay.innerHTML = `${formatCurrencyEUR(monthlyPayment)} <span class="text-xs font-sans text-marfim/60">/ mês</span>`;
+            financedAmountDisplay.textContent = formatCurrencyEUR(loanValue);
+            minIncomeDisplay.textContent = `${formatCurrencyEUR(minIncome)} / mês`;
+            taxesDisplay.textContent = formatCurrencyEUR(estimatedTaxes);
+        }
+
+        // Attach Slider Event Listeners
+        if (propValueInput && downPaymentInput && loanTermInput) {
+            [propValueInput, downPaymentInput, loanTermInput].forEach(input => {
+                input.addEventListener('input', calculateMortgage);
+            });
+            // Initial calculation run
+            calculateMortgage();
+        }
+
+        // WhatsApp Direct Share for Simulation
+        function enviarSimulacaoWhatsApp() {
+            const propValue = propValueDisplay.textContent;
+            const downValue = downPaymentDisplay.textContent;
+            const termYears = loanTermDisplay.textContent;
+            const installment = monthlyInstallmentDisplay.innerText.replace('\n', '');
+
+            const msg = `Olá Waleska! Fiz uma simulação no seu site:\n- Imóvel: ${propValue}\n- Entrada: ${downValue}\n- Prazo: ${termYears}\n- Estimativa de parcela: ${installment}\n\nGostaria de analisar opções disponíveis em Lisboa!`;
+            
+            const encodedMsg = encodeURIComponent(msg);
+            window.open(`https://wa.me/5500000000000?text=${encodedMsg}`, '_blank');
+        }
+
+        // Handle Property Dossier Modal Trigger
+        function abrirModalInteresse(nomeImovel) {
+            document.getElementById('modalTitulo').textContent = `Dossier: ${nomeImovel}`;
+            document.getElementById('modalTexto').textContent = `Sua solicitação de informações para o imóvel "${nomeImovel}" (Villas de Lisboa) foi registrada. Como deseja receber o material detalhado?`;
+            
+            const msg = `Olá Waleska, gostaria de receber o dossier completo do imóvel: ${nomeImovel}.`;
+            document.getElementById('modalWhatsappBtn').href = `https://wa.me/5500000000000?text=${encodeURIComponent(msg)}`;
+            
+            document.getElementById('modalSucesso').classList.remove('hidden');
+        }
+
+        // Process Lead Capture Form
+        function processarCaptacao(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('fullName').value;
+            const phone = document.getElementById('phone').value;
+            const objective = document.getElementById('objective').value;
+            const budget = document.getElementById('budget').value;
+
+            document.getElementById('modalTitulo').textContent = `Obrigado, ${name}!`;
+            document.getElementById('modalTexto').textContent = `Recebemos seus dados com sucesso. Waleska Santos já foi notificada para preparar uma seleção exclusiva dentro da sua faixa de ${budget}.`;
+
+            const msg = `Olá Waleska! Meu nome é ${name}. Solicitei atendimento no site:\n- Telefone: ${phone}\n- Objetivo: ${objective}\n- Orcamento: ${budget}\n\nFico no aguardo do seu contato!`;
+            document.getElementById('modalWhatsappBtn').href = `https://wa.me/5500000000000?text=${encodeURIComponent(msg)}`;
+
+            document.getElementById('modalSucesso').classList.remove('hidden');
+            document.getElementById('leadForm').reset();
+        }
+
+        function fecharModalSucesso() {
+            document.getElementById('modalSucesso').classList.add('hidden');
+        }
+
+        // FAQ Toggle Accordion
+        function toggleFaq(btn) {
+            const content = btn.nextElementSibling;
+            const icon = btn.querySelector('i');
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.replace('fa-plus', 'fa-minus');
+            } else {
+                content.classList.add('hidden');
+                icon.classList.replace('fa-minus', 'fa-plus');
+            }
+        }
+    </script>
+</body>
+</html>
